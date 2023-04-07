@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.bytecode.use_reflection_optimizer">false</property>
+        <property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+        <property name="hibernate.connection.password">abc123.</property>
+        <property name="hibernate.connection.url">jdbc:sqlserver://localhost:1433;database=empresa;encrypt=true;trustServerCertificate=true;</property>
+        <property name="hibernate.connection.username">user</property>
+        <property name="hibernate.default_catalog">empresa_prueba_ud3</property>
+        <property name="hibernate.default_schema">dbo</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
+        <property name="hibernate.hbm2ddl.auto">none</property>
+        <!-- Una vez actualizada BD con una nueva subclase TermDepositAccount, vuelvo a establecer la propiedad a una none por defecto
+        <property name="hibernate.hbm2ddl.auto">update</property>-->
+        <property name="hibernate.search.autoregister_listeners">true</property>
+        <property name="hibernate.validator.apply_to_ddl">false</property>
+        
+        <!-- Propiedades para que muestre consultas sql -->
+        <property name="hibernate.show_sql">true</property>
+		<property name="hibernate.format_sql">true</property>
+		<property name="hibernate.use_sql_comments">true</property> 
+        
+        
+        <mapping class="modelo.ud3.Departamento" />
+        <mapping class="modelo.ud3.AccMovement" />
+        <mapping class="modelo.ud3.Empleado" />
+        <mapping class="modelo.ud3.Account" />
+        <mapping class="modelo.ud3.TermDepositAccount"/>
+    </session-factory>
+</hibernate-configuration>
